@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Prediction</title>
+</head>
+<body>
+    <h2>{{ disease|capitalize }} Prediction Page</h2>
+    <form method="POST">
+        {% if disease == 'diabetes' %}
+            <!-- Diabetes form inputs -->
+            <label for="Pregnancies">Number of Pregnancies:</label>
+            <input type="text" id="Pregnancies" name="Pregnancies"><br>
+            <!-- Add other inputs similarly -->
+        {% elif disease == 'heart' %}
+            <!-- Heart disease form inputs -->
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age"><br>
+            <!-- Add other inputs similarly -->
+        {% elif disease == 'parkinsons' %}
+            <!-- Parkinson's disease form inputs -->
+            <label for="fo">MDVP:Fo(Hz):</label>
+            <input type="text" id="fo" name="fo"><br>
+            <!-- Add other inputs similarly -->
+        {% endif %}
+        <button type="submit">Predict</button>
+    </form>
+    {% if diagnosis %}
+        <h3>Diagnosis: {{ diagnosis }}</h3>
+    {% endif %}
+</body>
+</html>

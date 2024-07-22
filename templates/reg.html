@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="register-page">
+        <div class="form-container">
+            <div class="header">
+                <h2>Register</h2>
+            </div>
+            <form id="register-form" method="POST" action="{{ url_for('register') }}">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Gmail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="qualification">Highest Qualification</label>
+                    <select id="qualification" name="qualification" required>
+                        <option value="inter">Inter</option>
+                        <option value="graduate">Graduate</option>
+                        <option value="post-graduate">Post-Graduate</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="password">Create Password</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility('password')">👁️</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="password-container">
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility('confirm-password')">👁️</span>
+                    </div>
+                </div>
+                <div id="password-feedback" class="feedback"></div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function togglePasswordVisibility(fieldId) {
+            const passwordField = document.getElementById(fieldId);
+            passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>
