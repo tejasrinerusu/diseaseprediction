@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Optional CSS for styling -->
+</head>
+
+<body>
+    <h1>Health Assistant</h1>
+    <nav>
+        <ul>
+            <li><a href="#diabetes">Diabetes Prediction</a></li>
+            <li><a href="#heart">Heart Disease Prediction</a></li>
+            <li><a href="#parkinsons">Parkinson's Prediction</a></li>
+        </ul>
+    </nav>
+
+    <!-- Diabetes Prediction Form -->
+    <section id="diabetes">
+        <h2>Diabetes Prediction</h2>
+        <form action="/predict_diabetes" method="post">
+            <label for="Pregnancies">Number of Pregnancies:</label>
+            <input type="text" id="Pregnancies" name="Pregnancies" required><br>
+
+            <label for="Glucose">Glucose Level:</label>
+            <input type="text" id="Glucose" name="Glucose" required><br>
+
+            <!-- Add other input fields similarly -->
+
+            <button type="submit">Predict Diabetes</button>
+        </form>
+        <div id="diabetes_result"></div>
+    </section>
+
+    <!-- Heart Disease Prediction Form -->
+    <section id="heart">
+        <h2>Heart Disease Prediction</h2>
+        <form action="/predict_heart" method="post">
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required><br>
+
+            <label for="sex">Sex:</label>
+            <input type="text" id="sex" name="sex" required><br>
+
+            <!-- Add other input fields similarly -->
+
+            <button type="submit">Predict Heart Disease</button>
+        </form>
+        <div id="heart_result"></div>
+    </section>
+
+    <!-- Parkinson's Prediction Form -->
+    <section id="parkinsons">
+        <h2>Parkinson's Prediction</h2>
+        <form action="/predict_parkinsons" method="post">
+            <label for="fo">MDVP:Fo(Hz):</label>
+            <input type="text" id="fo" name="fo" required><br>
+
+            <label for="fhi">MDVP:Fhi(Hz):</label>
+            <input type="text" id="fhi" name="fhi" required><br>
+
+            <!-- Add other input fields similarly -->
+
+            <button type="submit">Predict Parkinson's</button>
+        </form>
+        <div id="parkinsons_result"></div>
+    </section>
+</body>
+
+</html>
